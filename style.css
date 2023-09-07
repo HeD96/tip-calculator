@@ -1,0 +1,238 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+:root {
+    --dollar-icon: url("./images/icon-dollar.svg");
+    --person-icon: url("./images/icon-person.svg");
+}
+
+html {
+    box-sizing: border-box;
+    height: 100%;
+    font-size: 16px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    font-family: "Space Mono", sans-serif;
+}
+
+body {
+    height: 100%;
+    background-color: hsl(185, 41%, 84%);
+}
+
+/* main layout */
+
+.main-content {
+    padding-top: 20rem;
+    height: 85%;
+    position: relative;
+}
+
+.calculator h1 {
+    position: absolute;
+    top: -12rem;
+    left: 50%;
+    transform: translate(-50%);
+
+    letter-spacing: 0.8rem;
+    line-height: 1.4;
+    font-size: 1.8rem;
+    color: hsl(183, 100%, 15%);
+}
+
+.calculator {
+    height: 35rem;
+    width: 65rem;
+    border-radius: 2rem;
+    background-color: hsl(0, 0%, 100%);
+    box-shadow: 0 0 15px 5px hsla(188, 14%, 56%, 0.151);
+
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    gap: 3rem;
+    padding: 2.5rem;
+}
+
+/* calculator input and output */
+
+.user-input {
+    padding: 1rem 0.5rem 1rem 1rem;
+    flex: 1;
+
+    display: grid;
+    grid-template-rows: 1fr 2fr 1fr;
+    gap: 2.8rem;
+}
+
+/* input fields */
+
+input {
+    border: none;
+    font-size: 1.6rem;
+
+    background-color: hsl(189, 41%, 97%);
+    color: hsl(183, 100%, 15%);
+}
+
+input::placeholder {
+    color: hsl(186, 14%, 43%);
+}
+
+input:focus {
+    outline: 2px solid hsl(185, 41%, 84%);
+}
+
+label {
+    font-size: 1.2rem;
+    color: hsl(186, 14%, 43%);
+}
+
+.bill input,
+.num-people input {
+    width: 100%;
+    height: 60%;
+    margin-top: 0.5rem;
+    border-radius: 0.5rem;
+    padding-right: 1.5rem;
+    text-align: end;
+
+    background-repeat: no-repeat;
+    background-position: 1.2rem;
+    background-size: 0.9rem;
+
+    position: relative;
+}
+
+/* specified input icons */
+
+.bill input {
+    background-image: var(--dollar-icon);
+}
+
+.num-people input {
+    background-image: var(--person-icon);
+}
+
+.selector-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 0.5rem;
+
+    color: white;
+    font-size: 1.6rem;
+}
+
+/* .selector-wrapper div {
+    background-color: hsl(183, 100%, 15%);
+    border-radius: 0.5rem;
+    cursor: pointer;
+
+    text-align: center;
+    line-height: 2.5;
+} */
+
+.tip_percent {
+    background-color: hsl(183, 100%, 15%);
+    border-radius: 0.5rem;
+    cursor: pointer;
+
+    text-align: center;
+    line-height: 2.5;
+}
+
+.selector-wrapper input {
+    border-radius: 0.5rem;
+    width: 100%;
+    text-align: center;
+}
+
+.output {
+    flex: 1;
+
+    border-radius: 2rem;
+    padding: 3rem;
+    background-color: hsl(183, 100%, 15%);
+    color: white;
+}
+
+.per-person,
+.total {
+    display: flex;
+    flex-direction: row;
+
+    margin-bottom: 1rem;
+}
+
+.name {
+    flex: 1;
+    line-height: 1.4;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.name p:nth-child(2) {
+    color: hsl(184, 14%, 56%);
+    font-size: 1rem;
+}
+
+.result {
+    flex: 2;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    text-align: end;
+    font-size: 3.4rem;
+    color: hsl(172, 67%, 45%);
+}
+
+.reset {
+    position: relative;
+    height: 5rem;
+    margin-top: 7rem;
+}
+
+.reset button {
+    width: 100%;
+    height: 70%;
+    border-radius: 0.5rem;
+    border: none;
+    background-color: hsl(172, 67%, 45%);
+    color: hsl(183, 100%, 15%);
+    font-size: 1.4rem;
+    cursor: pointer;
+
+    position: absolute;
+    bottom: 0%;
+}
+
+.active {
+    background-color: hsl(185, 41%, 84%);
+    color: hsl(183, 100%, 15%);
+}
+
+.valid {
+    outline: 2px solid hsl(172, 67%, 45%);
+}
+
+.invalid {
+    outline: 2px solid rgba(172, 0, 0, 0.5);
+}
